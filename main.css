@@ -3,6 +3,20 @@ body {
   text-align: center;
 }
 
+body {
+  min-height: 100svh;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
 header {
   font-family: Monospace;
   padding: 10px;
@@ -66,6 +80,10 @@ section {
   background: linear-gradient(50deg, rgb(135,222,255) 10%, rgb(255,135,233) 90%);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+section {
+  height: auto;
 }
 
 /* ========================= */
