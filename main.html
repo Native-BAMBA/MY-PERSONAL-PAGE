@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>MY PERSONAL PAGE</title>
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="main.css"/>
+
+  <!-- My Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- My Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <strong class="pulse-text">✦</strong> My Personal Page
+  </header>
+
+  <section>
+    <img src="mypic.jpg" alt="Profile Picture"/>
+
+    <h3 class="highlight" style="font-family: 'Montserrat', sans-serif;">X RAY JOKER</h3>
+    <p class="highlight2">WEB DEVELOPER | DESIGNER</p>
+
+    <!-- ICON BUTTONS WITH RIPPLE -->
+    <a href="#" class="btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    
+        <!-- CONTACT BUTTON -->
+    <button class="contact-btn" onclick="openContact()" style="margin: 10px 0 10px 0;">Contact Me</button>
+  </section>
+
+  <section class="info">
+    <h2 class="highlight2" style="margin-top: 10px;">About</h2>
+    <h4 class="highlight2" style="margin-bottom: 10px; font-family: 'Inter', Sans-Serif;">
+      I’m also a passionate tech enthusiast who loves exploring AI tools, coding in HTML and JavaScript, and using productivity platforms like Excel.
+      <br>
+      I enjoy experimenting with new technologies, building small web projects, automating tasks, and finding creative ways to work smarter.
+    </h4>
+    
+    <p class="footer"><span id="footer-text"></span> with NATIVE HUB ♨</p>
+  </section>
+
+<!-- BACKDROP -->
+<div id="backdrop" onclick="closeContact()"></div>
+
+<!-- SLIDE CONTACT PANEL -->
+<div id="contact-panel">
+  <div class="drag-handle"></div>
+
+  <span class="close-btn" onclick="closeContact()">&times;</span>
+
+  <h3>Info</h3>
+  <div class="input-panel">
+    <h4 class="input">
+      <strong class="input-highlight">Phone Number</strong><br>
+      +225 05 74 91 70 22
+    </h4>
+    <h4 class="input">
+      <strong class="input-highlight">Email</strong><br>
+      nativebamba@gmail.com
+    </h4>
+    <h4 class="input">
+      <strong class="input-highlight">Country</strong><br>
+      Cote D'Ivoire
+    </h4>
+  </div>
+
+  <h3>Contact Me</h3>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+  <!-- External JS -->
+  <script src="main.js"></script>
+
+</body>
+</html>
