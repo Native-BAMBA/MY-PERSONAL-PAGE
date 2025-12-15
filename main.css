@@ -487,3 +487,25 @@ body {
 button, a {
   -webkit-tap-highlight-color: transparent;
 }
+
+.page {
+  max-width: 900px;
+  margin: auto;
+}
+
+section {
+  overflow: hidden;
+}
+
+#contact-panel {
+  max-height: 70vh;
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .btn,
+  .contact-btn,
+  #contact-panel button {
+    cursor: pointer;
+  }
+}
