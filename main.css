@@ -84,7 +84,7 @@ section {
   font-size: 1.2rem;
   text-decoration: none;
   opacity: 0;
-  margin: 15px;
+  margin: 8px;
   background-color: white;
   transform: translateY(1px);
   transition: all ease 0.5s;
@@ -168,7 +168,6 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }   /* Lin
 /* ======================== */
 /* SLIDE CONTACT PANEL */
 /* ======================== */
-
 
 
 #contact-panel {
