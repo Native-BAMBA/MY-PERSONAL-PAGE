@@ -84,7 +84,7 @@ section {
   font-size: 1.2rem;
   text-decoration: none;
   opacity: 0;
-  margin: 10px;
+  margin: 15px;
   background-color: white;
   transform: translateY(1px);
   transition: all ease 0.5s;
