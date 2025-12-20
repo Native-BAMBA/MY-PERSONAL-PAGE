@@ -3,20 +3,6 @@ body {
   text-align: center;
 }
 
-body {
-  min-height: 100svh;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-attachment: fixed;
-  overflow-x: hidden;
-}
-
 header {
   font-family: Monospace;
   padding: 10px;
@@ -82,10 +68,6 @@ section {
   border-bottom-right-radius: 10px;
 }
 
-section {
-  height: auto;
-}
-
 /* ========================= */
 /* MY ICON BUTTONS + RIPPLE */
 /* ========================= */
@@ -108,6 +90,8 @@ section {
   transition: all ease 0.5s;
   animation: slideIn 1s forwards;
   animation-delay: 1.5s;
+
+  /* RIPPLE SETUP */
   position: relative;
   overflow: hidden;
 }
@@ -117,6 +101,7 @@ a.btn:nth-of-type(2) { color: #25d366; }
 a.btn:nth-of-type(3) { color: #e1306c; }
 a.btn:nth-of-type(4) { color: #0077b5; }
 
+/* RIPPLE CIRCLE */
 .btn::after {
   content: "";
   position: absolute;
@@ -129,6 +114,7 @@ a.btn:nth-of-type(4) { color: #0077b5; }
   pointer-events: none;
 }
 
+/* RIPPLE ON CLICK */
 .btn:active::after {
   animation: ripple 0.6s ease-out;
 }
@@ -138,11 +124,11 @@ a.btn:nth-of-type(4) { color: #0077b5; }
   border: 1px solid white;
   background-color: #2f9c9d;
 }
-
-a.btn:hover:nth-of-type(1) { color: white; background-color: #1da1f2; }
-a.btn:hover:nth-of-type(2) { color: white; background-color: #25d366; }
-a.btn:hover:nth-of-type(3) { color: white; background-color: #e1306c; }
-a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
+/* PLATFORM HOVER COLORS */
+a.btn:hover:nth-of-type(1) { color: white; background-color: #1da1f2; }   /* Twitter */
+a.btn:hover:nth-of-type(2) { color: white; background-color: #25d366; }   /* WhatsApp */
+a.btn:hover:nth-of-type(3) { color: white; background-color: #e1306c; }   /* Instagram */
+a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }   /* LinkedIn */
 
 /* ========================= */
 /* OTHER SECTIONS */
@@ -183,6 +169,8 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
 /* SLIDE CONTACT PANEL */
 /* ======================== */
 
+
+
 #contact-panel {
   position: fixed;
   bottom: -100%;
@@ -204,7 +192,7 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
 #backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.15); /* optional darkening */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   opacity: 0;
@@ -213,8 +201,14 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
   z-index: 999;
 }
 
-#contact-panel.active { bottom: 0; }
-#backdrop.active { opacity: 1; pointer-events: auto; }
+#contact-panel.active {
+  bottom: 0;
+}
+
+#backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .close-btn {
   position: absolute;
@@ -269,6 +263,7 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
   background: #2f9c9d;
   color: white;
   cursor: none;
+  
   position: relative;
   overflow: hidden;
 }
@@ -286,12 +281,12 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
   pointer-events: none;
 }
 
+/* RIPPLE ON CLICK */
 #contact-panel:active::after {
   animation: ripple 0.8s ease-out;
 }
 
-.contact-btn:focus,
-#contact-panel button:focus {
+.contact-btn:focus, #contact-panel button:focus {
   outline: 1px solid #2f9c9d;
   outline-offset: 2px;
 }
@@ -308,6 +303,7 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
   pointer-events: none;
 }
 
+/* RIPPLE ON CLICK */
 .contact-btn:active::after {
   animation: ripple 0.3s ease-out;
 }
@@ -334,7 +330,6 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
   border-radius: 10px;
   padding: 10px;
 }
-
 .input {
   position: relative;
   text-align: left;
@@ -358,7 +353,6 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-
 #footer-text {
   animation: pulseColor 6s infinite;
 }
@@ -368,9 +362,15 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
 /* ========================= */
 
 @keyframes border-anime {
-  0% { box-shadow: 0 0 0 0 rgb(255,255,255); }
-  70% { box-shadow: 0 0 0 5px rgba(255,255,255,0); }
-  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  0% {
+    box-shadow: 0 0 0 0 rgb(255,255,255);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(255,255,255,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255,255,255,0);
+  }
 }
 
 @keyframes slideIn {
@@ -422,108 +422,4 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }
   0%   { transform: rotate(180deg); color: #000000; }
   50%  { color: red; transform: scale(1.2); }
   100% { transform: rotate(360deg); color: #000000; }
-}
-
-/* ================================================= */
-/* ========== RESPONSIVE ADDITIONS (ONLY) =========== */
-/* ================================================= */
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  padding: 10px;
-}
-
-/* 📱 Mobile */
-@media (max-width: 480px) {
-
-  h1 { font-size: 1.5rem; }
-  h3, h4 { font-size: 1rem; }
-  p { font-size: 0.9rem; }
-
-  .btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-    margin: 6px;
-  }
-
-  .contact-btn {
-    width: 90%;
-  }
-
-  #contact-panel {
-    width: 100%;
-    height: 75%;
-    padding: 20px;
-  }
-
-  img:hover,
-  img:active {
-    transform: scale(1.4) translateY(10px);
-  }
-}
-
-/* 📲 Tablet */
-@media (min-width: 481px) and (max-width: 768px) {
-
-  h1 { font-size: 1.8rem; }
-
-  .btn {
-    width: 42px;
-    height: 42px;
-  }
-
-  #contact-panel {
-    width: 90%;
-  }
-}
-
-/* 💻 Desktop */
-@media (min-width: 769px) {
-
-  body {
-    max-width: 900px;
-    margin: auto;
-  }
-
-  #contact-panel {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-/* Touch devices */
-@media (hover: none) {
-  img:hover,
-  .btn:hover {
-    transform: none;
-  }
-}
-
-button, a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.page {
-  max-width: 900px;
-  margin: auto;
-}
-
-section {
-  overflow: hidden;
-}
-
-#contact-panel {
-  max-height: 70vh;
-  will-change: transform;
-}
-
-@media (hover: hover) {
-  .btn,
-  .contact-btn,
-  #contact-panel button {
-    cursor: pointer;
-  }
 }
