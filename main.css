@@ -57,15 +57,25 @@ img:active {
   border-radius: 10%;  
   width: 100px;  
   transform: scale(2) translateY(20px);  
-  animation: wiggle 0.5s infinite; 
+  border: 5px solid transparent;
+  border-image-slice: 1;
+  animation: borderFlow 3s infinite linear;
 }
 
-@keyframes wiggle {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(5deg); }
-  50% { transform: rotate(-5deg); }
-  75% { transform: rotate(5deg); }
-  100% { transform: rotate(0deg); }
+
+@keyframes borderFlow {
+  0%   { border-image: linear-gradient(45deg, red, blue) 1; }
+  50%  { border-image: linear-gradient(135deg, purple, yellow) 1; }
+  100% { border-image(225deg, green, pink) 1; }
+}
+
+
+@keyframes morph {
+  0%   { border-radius: 50%; transform: scale(1) rotate(0deg); }
+  25%  { border-radius: 30%; transform: scale(1.2) rotate(15deg); }
+  50%  { border-radius: 10%; transform: scale(1.5) rotate(-15deg); }
+  75%  { border-radius: 30%; transform: scale(1.2) rotate(15deg); }
+  100% { border-radius: 50%; transform: scale(1) rotate(0deg); }
 }
 
 section {
