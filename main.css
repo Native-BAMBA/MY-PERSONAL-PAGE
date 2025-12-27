@@ -59,16 +59,7 @@ img:active {
   transform: scale(2) translateY(20px);  
   border: 5px solid transparent;
   border-image-slice: 1;
-  animation: morph 2s infinite ease-in-out;
-}
-
-
-@keyframes morph {
-  0%   { border-radius: 50%; transform: scale(1) rotate(0deg); }
-  25%  { border-radius: 30%; transform: scale(1.2) rotate(15deg); }
-  50%  { border-radius: 10%; transform: scale(1.5) rotate(-15deg); }
-  75%  { border-radius: 30%; transform: scale(1.2) rotate(15deg); }
-  100% { border-radius: 50%; transform: scale(1) rotate(0deg); }
+  animation: border-anime 3s infinite;
 }
 
 section {
