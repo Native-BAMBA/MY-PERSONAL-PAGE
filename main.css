@@ -57,13 +57,15 @@ img:active {
   border-radius: 10%;  
   width: 100px;  
   transform: scale(2) translateY(20px);  
-  animation: border-anime 2s infinite;  
+  animation: wiggle 0.5s infinite; 
 }
 
-img:hover {
-  border: 3px solid red;
-  filter: hue-rotate(90deg);
-  transition: all 0.8s ease;
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
 }
 
 section {
