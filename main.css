@@ -55,7 +55,7 @@ img {
 img:hover,  
 img:active {  
   border-radius: 10%;  
-  width: 107px;  
+  width: 100px;  
   transform: scale(2) translateY(20px);  
   animation: border-anime 2s infinite;  
   animation-delay: 1s;  
