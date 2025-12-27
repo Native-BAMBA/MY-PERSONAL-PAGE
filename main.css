@@ -59,7 +59,11 @@ img:active {
   transform: scale(2) translateY(20px);  
   animation: border-anime 2s infinite;  
   animation-delay: 1s;  
+  border: 3px solid red;
+  filter: hue-rotate(90deg);
+  transition: all 0.8s ease;
 }
+
 
 section {
   color: white;
