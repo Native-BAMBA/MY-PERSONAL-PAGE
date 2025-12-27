@@ -78,6 +78,30 @@ document
   });
 
 /* ======================== */
+/* MESSAGE NOTIF */
+/* ======================== */
+const form = document.querySelector('#contact-panel form');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      alert("Message sent successfully!");
+      form.reset();
+      closeContact();
+    } else {
+      alert("Oops! Something went wrong.");
+    }
+  });
+});
+
+
+/* ======================== */
 /* FOOTER TYPING EFFECT */
 /* ======================== */
 const words = ["Innovate", "Create", "Learn", "Build", "Explore"];
