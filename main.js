@@ -78,9 +78,10 @@ document
   });
 
 /* ======================== */
-/* MESSAGE NOTIF */
+/* SUBMISSION MESSAGE NOTIF*/
 /* ======================== */
-const form = document.querySelector('#contact-panel form');
+const form = document.getElementById('contact-form');
+const successMessage = document.getElementById('success-message');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -91,12 +92,30 @@ form.addEventListener('submit', e => {
     headers: { 'Accept': 'application/json' }
   }).then(response => {
     if (response.ok) {
-      alert("Message sent successfully!");
+      // show success message
+      successMessage.style.color = '#2f9c9d';
+      successMessage.textContent = '✅ Your message has been sent successfully!';
+      successMessage.classList.add('show');
+
+      // clear form fields
       form.reset();
-      closeContact();
+
+      // auto-hide message & close panel after 2.5s
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+        closeContact();
+      }, 2500);
+
     } else {
-      alert("Oops! Something went wrong.");
+      // error handling
+      successMessage.style.color = '#e63946';
+      successMessage.textContent = '❌ Oops! Something went wrong.';
+      successMessage.classList.add('show');
     }
+  }).catch(() => {
+    successMessage.style.color = '#e63946';
+    successMessage.textContent = '❌ Network error! Try again.';
+    successMessage.classList.add('show');
   });
 });
 
