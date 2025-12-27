@@ -19,6 +19,10 @@ function closeContact() {
   contactPanel.style.transform = 'translateX(0)';
 }
 
+backdrop.addEventListener('click', e => {
+  e.stopPropagation();
+});
+
 /* ======================== */
 /* SWIPE TO CLOSE (RIGHT) */
 /* ======================== */
