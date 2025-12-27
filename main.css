@@ -130,6 +130,7 @@ a.btn:hover:nth-of-type(2) { color: white; background-color: #25d366; }   /* Wha
 a.btn:hover:nth-of-type(3) { color: white; background-color: #e1306c; }   /* Instagram */
 a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }   /* LinkedIn */
 
+
 /* ========================= */
 /* OTHER SECTIONS */
 /* ========================= */
@@ -163,6 +164,31 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }   /* Lin
   animation-delay: 2s;
   position: relative;
   overflow: hidden;
+}
+
+
+/* ======================== */
+/* SUBMISSION MESSAGE NOTIF*/
+/* ======================== */
+#success-message {
+  display: none; /* hidden by default */
+  margin-top: 15px;
+  color: #2f9c9d;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* when message is shown */
+#success-message.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ======================== */
