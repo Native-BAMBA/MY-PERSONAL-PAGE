@@ -59,14 +59,7 @@ img:active {
   transform: scale(2) translateY(20px);  
   border: 5px solid transparent;
   border-image-slice: 1;
-  animation: borderFlow 3s infinite linear;
-}
-
-
-@keyframes borderFlow {
-  0%   { border-image: linear-gradient(45deg, red, blue) 1; }
-  50%  { border-image: linear-gradient(135deg, purple, yellow) 1; }
-  100% { border-image(225deg, green, pink) 1; }
+  animation: morph 2s infinite ease-in-out;
 }
 
 
