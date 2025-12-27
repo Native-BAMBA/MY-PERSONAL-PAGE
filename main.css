@@ -46,20 +46,19 @@ img {
   border: 1px solid white;  
   border-radius: 50%;  
 }  
-  
+
 img {  
   transform: scale(1) translateY(1px);  
   transition: all ease 0.5s;  
 }  
-  
+
 img:hover,  
 img:active {  
   border-radius: 10%;  
   width: 100px;  
   transform: scale(2) translateY(20px);  
-  border: 5px solid transparent;
-  border-image-slice: 1;
   animation: border-anime 3s infinite;
+  animation-delay: 1s;
 }
 
 section {
@@ -167,26 +166,35 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }   /* Lin
 }
 
 /* ======================== */
-/* SLIDE CONTACT PANEL */
+/* SLIDE CONTACT PANEL (RIGHT) */
 /* ======================== */
-
 
 #contact-panel {
   position: fixed;
-  bottom: -100%;
-  left: 0;
+  top: 50px;
+  right: -100%;
+  
+  height: 70%;
   width: 80%;
   max-width: 420px;
-  height: 70%;
-  min-height: 40%;
+  min-height: 300px;
   background: white;
+
   border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: 0 -5px 15px rgba(0,0,0,.2);
-  padding: 37px;
-  transition: bottom 0.5s ease, transform 0.3s ease;
-  touch-action: pan-y;
+  border-bottom-left-radius: 20px;
+
+  box-shadow: -5px 0 15px rgba(0,0,0,.2);
+  padding: 30px;
+
+  transform: translateX(0, -50%);
+  transition: right 0.5s ease, transform 0.3s ease;
+
+  touch-action: pan-x;
   z-index: 1000;
+}
+
+#contact-panel.active {
+  right: 0;
 }
 
 #backdrop {
@@ -199,10 +207,6 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }   /* Lin
   pointer-events: none;
   transition: opacity 0.4s ease;
   z-index: 999;
-}
-
-#contact-panel.active {
-  bottom: 0;
 }
 
 #backdrop.active {
@@ -263,7 +267,7 @@ a.btn:hover:nth-of-type(4) { color: white; background-color: #0077b5; }   /* Lin
   background: #2f9c9d;
   color: white;
   cursor: none;
-  
+
   position: relative;
   overflow: hidden;
 }
