@@ -65,32 +65,48 @@
 
   <span class="close-btn" onclick="closeContact()">&times;</span>
 
-  <h3>Info</h3>
+  <!-- PANEL TITLE -->
+  <h3 class="panel-title">Contact</h3>
+
+  <!-- INFO SECTION -->
   <div class="input-panel">
-    <h4 class="input">
-      <strong class="input-highlight">Phone Number</strong><br>
-      +225 05 74 91 70 22
-    </h4>
-    <h4 class="input">
-      <strong class="input-highlight">Email</strong><br>
-      nativebamba@gmail.com
-    </h4>
-    <h4 class="input">
-      <strong class="input-highlight">Country</strong><br>
-      Cote D'Ivoire
-    </h4>
-  </div>
+  <h4 class="input">
+    <strong class="input-highlight">
+      <i class="fa-solid fa-phone"></i> Phone
+    </strong><br>
+    <a href="tel:+2250574917022">+225 05 74 91 70 22</a>
+  </h4>
 
-  <h3>Contact Me</h3>
+  <h4 class="input">
+    <strong class="input-highlight">
+      <i class="fa-solid fa-envelope"></i> Email
+    </strong><br>
+    <a href="mailto:nativebamba@gmail.com">nativebamba@gmail.com</a>
+  </h4>
+
+  <h4 class="input">
+    <strong class="input-highlight">
+      <i class="fa-solid fa-location-dot"></i> Country
+    </strong><br>
+    Abidjan, Côte d’Ivoire
+  </h4>
+</div>
+
+  <!-- PRIMARY ACTION (FORM COMES LATER) -->
+  <button class="reveal-form-btn" id="revealFormBtn">
+    Click to send me a message
+  </button>
+
+  <!-- FORM (WILL BE ACTIVATED IN STEP 4) -->
   <form id="contact-form" action="https://formspree.io/f/meeqgrwq" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <button type="submit">Send</button>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
 
-  <!-- SUCCESS MESSAGE -->
-  <div id="success-message">✅ Your message has been sent successfully!</div>
-</form>
+    <div id="success-message">✓ Message has been sent successfully!</div>
+  </form>
+</div>
 
   <!-- External JS -->
   <script src="main.js"></script>
