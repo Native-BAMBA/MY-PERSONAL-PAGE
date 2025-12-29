@@ -24,6 +24,25 @@ backdrop.addEventListener('click', e => {
 });
 
 /* ======================== */
+/* FORM REVEAL */
+/* ======================== */
+const revealBtn = document.getElementById('revealFormBtn');
+
+revealBtn.addEventListener('click', () => {
+  form.classList.add('active');
+  revealBtn.style.display = 'none';
+});
+
+function closeContact() {
+  backdrop.classList.remove('active');
+  contactPanel.classList.remove('active');
+  contactPanel.style.transform = 'translateX(0)';
+
+  form.classList.remove('active');
+  revealBtn.style.display = 'block';
+}
+
+/* ======================== */
 /* SWIPE TO CLOSE (RIGHT) */
 /* ======================== */
 let startX = 0;
@@ -86,36 +105,43 @@ const successMessage = document.getElementById('success-message');
 form.addEventListener('submit', e => {
   e.preventDefault();
 
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  // --- Sending state ---
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+  successMessage.style.color = '#555';
+  successMessage.textContent = '⏳ Sending your message...';
+  successMessage.classList.add('show');
+
   fetch(form.action, {
     method: 'POST',
     body: new FormData(form),
     headers: { 'Accept': 'application/json' }
-  }).then(response => {
+  })
+  .then(response => {
     if (response.ok) {
-      // show success message
+      // --- Success ---
       successMessage.style.color = '#2f9c9d';
-      successMessage.textContent = '✅ Your message has been sent successfully!';
-      successMessage.classList.add('show');
-
-      // clear form fields
+      successMessage.textContent = '✅ Message received! I’ll reply soon.';
       form.reset();
 
-      // auto-hide message & close panel after 2.5s
       setTimeout(() => {
         successMessage.classList.remove('show');
         closeContact();
       }, 2500);
-
     } else {
-      // error handling
-      successMessage.style.color = '#e63946';
-      successMessage.textContent = '❌ Oops! Something went wrong.';
-      successMessage.classList.add('show');
+      throw new Error();
     }
-  }).catch(() => {
+  })
+  .catch(() => {
+    // --- Error ---
     successMessage.style.color = '#e63946';
-    successMessage.textContent = '❌ Network error! Try again.';
-    successMessage.classList.add('show');
+    successMessage.textContent = '❌ Something went wrong. Please try again.';
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send';
   });
 });
 
